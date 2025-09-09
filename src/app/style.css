@@ -1,0 +1,40 @@
+body {
+    background-color: #f0efed !important;
+}
+
+.cs-transition {
+    transition: .5s !important;
+}
+
+/*Background*/
+.cs-bg-navbar {
+    background-color: #1a2456 !important;
+}
+
+/*Font*/
+.cs-tc-main {
+    color: rgb(239, 194, 179) !important;
+}
+
+.cs-fs-7 {
+    font-size: 13px !important;
+}
+
+.dropdown-toggle {
+    color: rgb(239, 194, 179) !important;
+    transition: .5s !important;
+}
+
+.dropdown-toggle:hover {
+    color: white !important;
+}
+
+/*Buttons*/
+.cs-navbar-toggle {
+    color: rgb(239, 194, 179) !important;
+    border-color: rgb(239, 194, 179) !important;
+}
+
+.cs-btn-nav:hover {
+    color: #ff8b68 !important;
+}
