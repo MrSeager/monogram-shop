@@ -11,6 +11,11 @@ body {
     background-color: #1a2456 !important;
 }
 
+/*Border*/
+.cs-bc {
+    border-color: rgb(239, 194, 179) !important;
+}
+
 /*Font*/
 .cs-tc-main {
     color: rgb(239, 194, 179) !important;
@@ -37,4 +42,19 @@ body {
 
 .cs-btn-nav:hover {
     color: #ff8b68 !important;
+}
+
+.cs-btn {
+    background-color: rgb(239, 194, 179) !important;
+    color: #1a2456 !important;
+}
+
+.cs-btn:hover {
+    background-color: #1a2456 !important;
+    color: rgb(239, 194, 179) !important;
+}
+
+/*Form*/
+.cs-form::placeholder {
+    color: lightgrey !important;
 }
