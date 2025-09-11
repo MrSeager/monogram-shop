@@ -1,10 +1,36 @@
+import Image from "next/image";
 //Bootstrap
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
-export default function MGSectionTwo() {
+interface ShopItem {
+  id: number;
+  img: string;
+  name: string;
+  discription: string;
+  cost: number,
+  "pre-order": boolean
+}
+
+interface MGSectionTwoProps {
+    itemsData: ShopItem[];
+}
+
+export default function MGSectionTwo({ itemsData }: MGSectionTwoProps) {
     return(
         <Container>
-            store here
+            <Row>
+                {itemsData.map(item => (
+                    <Col key={item.id} lg={6} xs={12}>
+                        <Image 
+                            src={item.img} 
+                            layout="responsive"
+                            width={900}
+                            height={600} 
+                            alt={item.name} 
+                        />
+                    </Col>
+                ))}
+            </Row>
         </Container>
     );
 }
