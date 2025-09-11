@@ -6,7 +6,7 @@ import { FaInstagram, FaTwitter, FaFacebookF, FaYoutube } from "react-icons/fa";
 
 export default function MGFooter() {
     return (
-        <Container fluid className='cs-bg-navbar cs-tc-main py-5'>
+        <Container fluid className='cs-bg-navbar cs-tc-main py-5 user-select-none'>
             <Container className='px-0'>
                 <Row className='mx-0 gap-lg-0 gap-3'>
                     <Col lg={2} xs={12} className='px-0'>

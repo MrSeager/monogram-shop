@@ -1,7 +1,8 @@
 import Image from "next/image";
 //Components
 import './style.css';
-import MGNav from "./components/MGBar";
+import MGSectionOne from "./components/MGSectionOne";
+import MGSectionTwo from "./components/MGSectionTwo";
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container } from 'react-bootstrap';
@@ -10,8 +11,9 @@ import { Container } from 'react-bootstrap';
 
 export default function Home() {
   return (
-    <Container fluid className="min-vh-100">
-  
+    <Container fluid className="min-vh-100 user-select-none px-0">
+      <MGSectionOne />
+      <MGSectionTwo />
     </Container>
   );
 }

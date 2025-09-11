@@ -11,6 +11,10 @@ body {
     background-color: #1a2456 !important;
 }
 
+.cs-bg-image {
+    background: url('https://images.pexels.com/photos/542552/pexels-photo-542552.jpeg') no-repeat center bottom / 100% auto;
+}
+
 /*Border*/
 .cs-bc {
     border-color: rgb(239, 194, 179) !important;

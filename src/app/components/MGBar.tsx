@@ -7,7 +7,7 @@ import { BiLogoCodepen } from "react-icons/bi";
 
 export default function MGNav() {
     return (
-        <Navbar fixed='top' expand='lg' className='px-0 cs-tc-main'>
+        <Navbar fixed='top' expand='lg' className='px-0 cs-tc-main user-select-none'>
             <Container className='cs-bg-navbar py-2 px-3 shadow'>
                 <Navbar.Brand 
                     href="#home" 
