@@ -12,19 +12,19 @@ interface ShopItem {
   "pre-order": boolean
 }
 
-interface MGSectionTwoProps {
+interface MGSectionFourProps {
     itemsData: ShopItem[];
 }
 
-export default function MGSectionTwo({ itemsData }: MGSectionTwoProps) {
+export default function MGSectionFour({ itemsData }: MGSectionFourProps) {
     return(
         <Container className="px-0 my-5">
             <Row className="mx-0">
                 {itemsData.map(item => (
-                    <Col key={item.id} lg={6} xs={12} className='p-3'>
+                    <Col key={item.id} lg={4} xs={12} className='p-3'>
                         <MGItem 
                             item={item} 
-                            disOn={true}
+                            disOn={false}
                         />
                     </Col>
                 ))}

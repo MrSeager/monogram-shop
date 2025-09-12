@@ -15,6 +15,10 @@ body {
     background: url('https://images.pexels.com/photos/542552/pexels-photo-542552.jpeg') no-repeat center bottom / 100% auto;
 }
 
+.cs-bg-image-banner {
+    background: url('https://images.pexels.com/photos/3945652/pexels-photo-3945652.jpeg') no-repeat center bottom / 100% auto;
+}
+
 /*Border*/
 .cs-bc {
     border-color: rgb(239, 194, 179) !important;
@@ -23,6 +27,10 @@ body {
 /*Font*/
 .cs-tc-main {
     color: rgb(239, 194, 179) !important;
+}
+
+.cs-tc-banner {
+    color: #1a2456 !important;
 }
 
 .cs-fs-7 {
@@ -61,4 +69,10 @@ body {
 /*Form*/
 .cs-form::placeholder {
     color: lightgrey !important;
+}
+
+/*Badge*/
+.cs-badge {
+    right: 0;
+    background-color: #ff8b68 !important;
 }

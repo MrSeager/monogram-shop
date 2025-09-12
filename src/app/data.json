@@ -27,7 +27,7 @@
         {   
             "id": 4,
             "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-stephendn-63703.jpg",
-            "name": "Аourth some name",
+            "name": "Fourth some name",
             "discription": "Fourth some not so long discription.",
             "cost": 899,
             "pre-order": true
