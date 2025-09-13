@@ -19,24 +19,32 @@ interface ShopItem {
   "pre-order": boolean
 }
 
-async function getData(): Promise<ShopItem[]> {
+type ShopData = {
+  sectionTwoItems: ShopItem[];
+  sectionFourItems: ShopItem[];
+};
+
+async function getData(): Promise<ShopData> {
   const res = await fetch('https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/data.json');
   const json = await res.json();
-  return json.SectionTwoItems;
+  return {
+    sectionTwoItems: json.SectionTwoItems,
+    sectionFourItems: json.SectionFourItems,
+  };
 }
 
 export default async function Home() {
-  const sectionTwoData = await getData();
+  const { sectionTwoItems, sectionFourItems } = await getData();
   
   return (
     <Container fluid className="min-vh-100 user-select-none px-0">
       <MGSectionOne />
       <MGSectionTwo 
-        itemsData={sectionTwoData}
+        itemsData={sectionTwoItems}
       />
       <MGSectionThree />
       <MGSectionFour 
-        itemsData={sectionTwoData}
+        itemsData={sectionFourItems}
       />
     </Container>
   );
