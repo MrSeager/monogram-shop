@@ -32,5 +32,39 @@
             "cost": 899,
             "pre-order": true
         }
+    ],
+    "SectionFourItems": [
+        {   
+            "id": 1,
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-aalsaibaie-12379595.jpg",
+            "name": "Some name",
+            "discription": "Some not so long discription.",
+            "cost": 59,
+            "pre-order": true
+        },
+        {   
+            "id": 2,
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-tstudio-34805588-14517351.jpg",
+            "name": "Second some name",
+            "discription": "Second some not so long discription.",
+            "cost": 159,
+            "pre-order": true
+        },
+        {   
+            "id": 3,
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-tstudio-34805588-14517352.jpg",
+            "name": "Third some name",
+            "discription": "Third some not so long discription.",
+            "cost": 159,
+            "pre-order": false
+        },
+        {   
+            "id": 4,
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-tstudio-34805588-14745818.jpg",
+            "name": "Fourth some name",
+            "discription": "Fourth some not so long discription.",
+            "cost": 129,
+            "pre-order": false
+        }
     ]
 }
