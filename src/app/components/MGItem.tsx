@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 //Components
-import { useHover } from './anim';
+import { useHover, useFadeInHover } from './anim';
 //Bootstrap
 import { Badge, Row, Col, Card } from 'react-bootstrap';
 //Spring
@@ -24,18 +24,11 @@ interface MGItemProps {
 
 export default function MGItem ({ item, disOn }: MGItemProps) {
     const [hovered, isHovered] = useState<boolean>(false);
+    const imgBuy1 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-karolina-grabowska-5632396.jpg';
+    const imgBuy2 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-karolina-grabowska.jpg';
 
     const hoverAnim = useHover(hovered, 1.05);
-
-    const fadeIn = useSpring({
-        opacity: hovered ? 1 : 0,
-        config: { tension: 250, friction: 20 },
-    });
-
-    const fadeOut = useSpring({
-        opacity: hovered ? 0 : 1,
-        config: { tension: 250, friction: 20 },
-    });
+    const fadeInAnim = useFadeInHover(hovered, .9);
 
     return (
         <animated.div 
@@ -52,9 +45,9 @@ export default function MGItem ({ item, disOn }: MGItemProps) {
                 className='rounded-0 card-img-top'    
             />
             <animated.img
-                src='https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-karolina-grabowska-5632396.jpg'
+                src={disOn ? imgBuy1 : imgBuy2}
                 alt={`${item.name} hover`}
-                style={{ ...fadeIn, position: 'absolute', top: 0, left: 0, width: '100%' }}
+                style={{ ...fadeInAnim, position: 'absolute', top: 0, left: 0, width: '100%' }}
                 className='rounded-0'
             />
 

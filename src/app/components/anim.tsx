@@ -6,6 +6,12 @@ export const useHover = ( hover: boolean, scl: number ) =>
         config: { tension: 110, friction: 10 },
     });
 
+export const useFadeInHover = ( hover: boolean, x: number ) =>
+    useSpring({
+        opacity: hover ? x : 0,
+        config: { tension: 250, friction: 20 },
+    });
+
 export const useScale = ( onScreen: boolean ) =>
     useSpring({
         from: { opacity: 0, transform: 'scale(0)' },
