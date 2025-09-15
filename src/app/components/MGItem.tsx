@@ -1,6 +1,11 @@
 "use client";
+import { useState } from 'react';
+//Components
+import { useHover } from './anim';
 //Bootstrap
 import { Badge, Row, Col, Card } from 'react-bootstrap';
+//Spring
+import { useSpring, animated } from '@react-spring/web';
 
 interface ShopItem {
   id: number;
@@ -18,15 +23,41 @@ interface MGItemProps {
 
 
 export default function MGItem ({ item, disOn }: MGItemProps) {
+    const [hovered, isHovered] = useState<boolean>(false);
+
+    const hoverAnim = useHover(hovered, 1.05);
+
+    const fadeIn = useSpring({
+        opacity: hovered ? 1 : 0,
+        config: { tension: 250, friction: 20 },
+    });
+
+    const fadeOut = useSpring({
+        opacity: hovered ? 0 : 1,
+        config: { tension: 250, friction: 20 },
+    });
+
     return (
-        <Card className='bg-transparent border-0 position-relevant'>
-            <Badge bg='custom' className={`text-black fs-6 px-4 mt-3 cs-badge rounded-0 text-uppercase position-absolute ${item['pre-order'] !== true ? 'd-none' : '' }`}>Pre-order</Badge>
-            <Card.Img 
-                variant="top" 
+        <animated.div 
+            onMouseEnter={() => isHovered(true)}
+            onMouseLeave={() => isHovered(false)}
+            style={hoverAnim} 
+            className='card bg-transparent border-0 position-relevant'
+        >
+            <Badge bg='custom' className={`z-3 text-black fs-6 px-4 mt-3 cs-badge rounded-0 text-uppercase position-absolute ${item['pre-order'] !== true ? 'd-none' : '' }`}>Pre-order</Badge>
+            
+            <animated.img 
                 src={item.img} 
                 alt={item.name} 
-                className='rounded-0'    
+                className='rounded-0 card-img-top'    
             />
+            <animated.img
+                src='https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-karolina-grabowska-5632396.jpg'
+                alt={`${item.name} hover`}
+                style={{ ...fadeIn, position: 'absolute', top: 0, left: 0, width: '100%' }}
+                className='rounded-0'
+            />
+
             <Card.Body as={Row} className='px-0'>
                 <Col xs={10}>
                     <Card.Subtitle className='fs-4 text-uppercase'>{item.name}</Card.Subtitle>
@@ -39,6 +70,6 @@ export default function MGItem ({ item, disOn }: MGItemProps) {
                     <Card.Subtitle className='text-secondary text-end'>${item.cost}</Card.Subtitle>
                 </Col>
             </Card.Body>
-        </Card>
+        </animated.div>
     )
 }
