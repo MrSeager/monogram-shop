@@ -3,19 +3,11 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 //Components
 import { useHover, useFadeInHover } from './anim';
+import type { ShopItem } from '@/types/ShopItem';
 //Bootstrap
 import { Badge, Row, Col, Card } from 'react-bootstrap';
 //Spring
 import { animated } from '@react-spring/web';
-
-interface ShopItem {
-  id: number;
-  img: string;
-  name: string;
-  discription: string;
-  cost: number,
-  "pre-order": boolean
-}
 
 interface MGItemProps {
     item: ShopItem;
@@ -26,15 +18,17 @@ interface MGItemProps {
 export default function MGItem ({ item, disOn }: MGItemProps) {
     const router = useRouter();
     const [hovered, isHovered] = useState<boolean>(false);
+    const [hoveredImg, isHoveredImg] = useState<boolean>(false);
     const imgBuy1 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-karolina-grabowska-5632396.jpg';
     const imgBuy2 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-karolina-grabowska.jpg';
 
     const hoverAnim = useHover(hovered, 1.05);
-    const fadeInAnim = useFadeInHover(hovered, .9);
+    const fadeInAnim = useFadeInHover(hoveredImg, .9);
 
     const handleItemBtn = () => {
-        router.push(`/item/${item.id}?name=${item.name}&img=${item.img}&cost=${item.cost}&description=${item.discription}&preorder=${item['pre-order']}`)
-    }
+        sessionStorage.setItem('selectedItem', JSON.stringify(item));
+        router.push(`/item/${item.id}`);
+    };
 
     return (
         <animated.div 
@@ -52,6 +46,8 @@ export default function MGItem ({ item, disOn }: MGItemProps) {
                 className='rounded-0 card-img-top'    
             />
             <animated.img
+                onMouseEnter={() => isHoveredImg(true)}
+                onMouseLeave={() => isHoveredImg(false)}
                 src={disOn ? imgBuy1 : imgBuy2}
                 alt={`${item.name} hover`}
                 style={{ ...fadeInAnim, position: 'absolute', top: 0, left: 0, width: '100%' }}

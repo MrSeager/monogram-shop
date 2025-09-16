@@ -1,16 +1,8 @@
 //Components
 import MGItem from './MGItem';
+import type { ShopItem } from '@/types/ShopItem';
 //Bootstrap
 import { Container, Row, Col } from 'react-bootstrap';
-
-interface ShopItem {
-  id: number;
-  img: string;
-  name: string;
-  discription: string;
-  cost: number,
-  "pre-order": boolean
-}
 
 interface MGSectionTwoProps {
     itemsData: ShopItem[];

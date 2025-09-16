@@ -2,30 +2,21 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 //Components
-
+import type { ShopItem } from '@/types/ShopItem';
 //Bootstrap
 import { Container } from 'react-bootstrap';
 //Spring
 import { animated } from '@react-spring/web';
 
-interface ShopItem {
-  id: number;
-  img: string;
-  name: string;
-  discription: string;
-  cost: number,
-  "pre-order": boolean
-}
-
 interface ItemPageProps {
-    item: ShopItem;
+    params: { id: number }
 }
 
-export default function ItemPage({ item }: ItemPageProps) {
-  const id = item.id;
+export default function ItemPage({ params }: ItemPageProps) {
+  const { id } = params;
 
   return (
-    <Container>
+    <Container className='min-vh-100'>
       <h1>Item Page</h1>
       <p>ID: {id}</p>
     </Container>

@@ -35,7 +35,7 @@
     ],
     "SectionFourItems": [
         {   
-            "id": 1,
+            "id": 5,
             "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-aalsaibaie-12379595.jpg",
             "name": "Some name",
             "discription": "Some not so long discription.",
@@ -43,7 +43,7 @@
             "pre-order": true
         },
         {   
-            "id": 2,
+            "id": 6,
             "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-tstudio-34805588-14517351.jpg",
             "name": "Second some name",
             "discription": "Second some not so long discription.",
@@ -51,7 +51,7 @@
             "pre-order": true
         },
         {   
-            "id": 3,
+            "id": 7,
             "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-tstudio-34805588-14517352.jpg",
             "name": "Third some name",
             "discription": "Third some not so long discription.",
@@ -59,7 +59,7 @@
             "pre-order": false
         },
         {   
-            "id": 4,
+            "id": 8,
             "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-tstudio-34805588-14745818.jpg",
             "name": "Fourth some name",
             "discription": "Fourth some not so long discription.",

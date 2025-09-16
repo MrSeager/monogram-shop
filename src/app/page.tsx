@@ -4,20 +4,12 @@ import MGSectionOne from "../components/MGSectionOne";
 import MGSectionTwo from "../components/MGSectionTwo";
 import MGSectionThree from "../components/MGSectionThree";
 import MGSectionFour from "../components/MGSectionFour";
+import type { ShopItem } from '@/types/ShopItem';
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container } from 'react-bootstrap';
 //Spring
 import { useSpring, animated } from '@react-spring/web';
-
-interface ShopItem {
-  id: number;
-  img: string;
-  name: string;
-  discription: string;
-  cost: number,
-  "pre-order": boolean
-}
 
 type ShopData = {
   sectionTwoItems: ShopItem[];
