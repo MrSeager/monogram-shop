@@ -2,7 +2,7 @@
     "SectionTwoItems": [
         {   
             "id": 1,
-            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-david-bares-42311-323687.jpg",
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-david-bares-42311-323687.jpg",
             "name": "Some name",
             "discription": "Some not so long discription.",
             "cost": 249,
@@ -10,7 +10,7 @@
         },
         {   
             "id": 2,
-            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-goumbik-306088.jpg",
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-goumbik-306088.jpg",
             "name": "Second some name",
             "discription": "Second some not so long discription.",
             "cost": 499,
@@ -18,7 +18,7 @@
         },
         {   
             "id": 3,
-            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-pixabay-164907.jpg",
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-pixabay-164907.jpg",
             "name": "Third some name",
             "discription": "Third some not so long discription.",
             "cost": 599,
@@ -26,7 +26,7 @@
         },
         {   
             "id": 4,
-            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-stephendn-63703.jpg",
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-stephendn-63703.jpg",
             "name": "Fourth some name",
             "discription": "Fourth some not so long discription.",
             "cost": 899,
@@ -36,7 +36,7 @@
     "SectionFourItems": [
         {   
             "id": 1,
-            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-aalsaibaie-12379595.jpg",
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-aalsaibaie-12379595.jpg",
             "name": "Some name",
             "discription": "Some not so long discription.",
             "cost": 59,
@@ -44,7 +44,7 @@
         },
         {   
             "id": 2,
-            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-tstudio-34805588-14517351.jpg",
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-tstudio-34805588-14517351.jpg",
             "name": "Second some name",
             "discription": "Second some not so long discription.",
             "cost": 159,
@@ -52,7 +52,7 @@
         },
         {   
             "id": 3,
-            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-tstudio-34805588-14517352.jpg",
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-tstudio-34805588-14517352.jpg",
             "name": "Third some name",
             "discription": "Third some not so long discription.",
             "cost": 159,
@@ -60,7 +60,7 @@
         },
         {   
             "id": 4,
-            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-tstudio-34805588-14745818.jpg",
+            "img": "https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-tstudio-34805588-14745818.jpg",
             "name": "Fourth some name",
             "discription": "Fourth some not so long discription.",
             "cost": 129,

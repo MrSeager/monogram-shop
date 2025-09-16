@@ -1,11 +1,12 @@
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 //Components
 import { useHover, useFadeInHover } from './anim';
 //Bootstrap
 import { Badge, Row, Col, Card } from 'react-bootstrap';
 //Spring
-import { useSpring, animated } from '@react-spring/web';
+import { animated } from '@react-spring/web';
 
 interface ShopItem {
   id: number;
@@ -23,6 +24,7 @@ interface MGItemProps {
 
 
 export default function MGItem ({ item, disOn }: MGItemProps) {
+    const router = useRouter();
     const [hovered, isHovered] = useState<boolean>(false);
     const imgBuy1 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-karolina-grabowska-5632396.jpg';
     const imgBuy2 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-karolina-grabowska.jpg';
@@ -30,10 +32,15 @@ export default function MGItem ({ item, disOn }: MGItemProps) {
     const hoverAnim = useHover(hovered, 1.05);
     const fadeInAnim = useFadeInHover(hovered, .9);
 
+    const handleItemBtn = () => {
+        router.push(`/item/${item.id}?name=${item.name}&img=${item.img}&cost=${item.cost}&description=${item.discription}&preorder=${item['pre-order']}`)
+    }
+
     return (
         <animated.div 
             onMouseEnter={() => isHovered(true)}
             onMouseLeave={() => isHovered(false)}
+            onClick={handleItemBtn}
             style={hoverAnim} 
             className='card bg-transparent border-0 position-relevant'
         >

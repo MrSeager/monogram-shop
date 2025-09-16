@@ -1,9 +1,9 @@
 //Components
 import './style.css';
-import MGSectionOne from "./components/MGSectionOne";
-import MGSectionTwo from "./components/MGSectionTwo";
-import MGSectionThree from "./components/MGSectionThree";
-import MGSectionFour from "./components/MGSectionFour";
+import MGSectionOne from "../components/MGSectionOne";
+import MGSectionTwo from "../components/MGSectionTwo";
+import MGSectionThree from "../components/MGSectionThree";
+import MGSectionFour from "../components/MGSectionFour";
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container } from 'react-bootstrap';
