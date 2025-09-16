@@ -26,8 +26,8 @@ interface MGItemProps {
 export default function MGItem ({ item, disOn }: MGItemProps) {
     const router = useRouter();
     const [hovered, isHovered] = useState<boolean>(false);
-    const imgBuy1 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-karolina-grabowska-5632396.jpg';
-    const imgBuy2 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/images/pexels-karolina-grabowska.jpg';
+    const imgBuy1 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-karolina-grabowska-5632396.jpg';
+    const imgBuy2 = 'https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/images/pexels-karolina-grabowska.jpg';
 
     const hoverAnim = useHover(hovered, 1.05);
     const fadeInAnim = useFadeInHover(hovered, .9);
