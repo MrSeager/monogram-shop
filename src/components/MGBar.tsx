@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 //Bootstrap
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 //Icons
@@ -10,7 +11,8 @@ export default function MGNav() {
         <Navbar fixed='top' expand='lg' className='px-0 cs-tc-main user-select-none'>
             <Container className='cs-bg-navbar py-2 px-3 shadow'>
                 <Navbar.Brand 
-                    href="#home" 
+                    as={Link}
+                    href="/" 
                     className="text-uppercase cs-tc-main cs-transition cs-btn-nav"
                 >
                     <BiLogoCodepen size={30} className='me-2' />Monogram

@@ -14,7 +14,6 @@ interface MGItemProps {
     disOn: boolean;
 }
 
-
 export default function MGItem ({ item, disOn }: MGItemProps) {
     const router = useRouter();
     const [hovered, isHovered] = useState<boolean>(false);
