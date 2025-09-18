@@ -17,13 +17,18 @@ export default function ItemPage() {
   const [item, setItem] = useState<ShopItem | null>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedItem = sessionStorage.getItem('selectedItem');
-      if (storedItem) {
-        setItem(JSON.parse(storedItem));
-      }
+    async function fetchItem() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const foundItem = [...data.SectionTwoItems, ...data.SectionFourItems].find(
+        (item: ShopItem) => item.id === Number(id)
+      );
+
+      setItem(foundItem || null);
     }
-  }, []);
+
+    fetchItem();
+  }, [id]);
 
   return (
     <Container fluid className='min-vh-100 px-0'>

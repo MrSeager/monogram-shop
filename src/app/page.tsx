@@ -11,14 +11,18 @@ import { Container } from 'react-bootstrap';
 //Spring
 import { useSpring, animated } from '@react-spring/web';
 
+import fs from 'fs';
+import path from 'path';
+
 type ShopData = {
   sectionTwoItems: ShopItem[];
   sectionFourItems: ShopItem[];
 };
 
 async function getData(): Promise<ShopData> {
-  const res = await fetch('/public/data.json');
-  const json = await res.json();
+  const filePath = path.join(process.cwd(), 'public', 'data.json');
+  const fileContents = fs.readFileSync(filePath, 'utf-8');
+  const json = JSON.parse(fileContents);
   return {
     sectionTwoItems: json.SectionTwoItems,
     sectionFourItems: json.SectionFourItems,
