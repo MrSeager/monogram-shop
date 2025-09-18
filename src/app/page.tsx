@@ -17,7 +17,7 @@ type ShopData = {
 };
 
 async function getData(): Promise<ShopData> {
-  const res = await fetch('https://raw.githubusercontent.com/MrSeager/monogram-shop/refs/heads/main/src/app/data.json');
+  const res = await fetch('https://raw.githubusercontent.com/MrSeager/monogram-shop/main/src/app/data.json');
   const json = await res.json();
   return {
     sectionTwoItems: json.SectionTwoItems,
