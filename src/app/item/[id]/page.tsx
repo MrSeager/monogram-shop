@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Metadata } from 'next';
 //Components
 import MGSectionOne from '@/components/MGSectionOne';
 import type { ShopItem } from '@/types/ShopItem';
@@ -11,35 +10,6 @@ import { Container, Row, Col, Badge, Button } from 'react-bootstrap';
 import { useParams } from 'next/navigation';
 //Icons
 import { SlBasket } from "react-icons/sl";
-
-export const generateMetadata = (): Metadata => {
-  return {
-    title: 'Monogram Shop Training Exercise',
-    description: 'Used Next.js, React, Bootstrap, React Spring and TypeScript',
-    openGraph: {
-      title: 'Welcome to My Shop',
-      description: 'Used Next.js, React, Bootstrap, React Spring and TypeScript',
-      url: 'https://monogram-shop.vercel.app/',
-      siteName: 'Monogram Shop Training Exercise',
-      images: [
-        {
-          url: 'https://images.pexels.com/photos/542552/pexels-photo-542552.jpeg', // must be absolute
-          width: 1200,
-          height: 630,
-          alt: 'Shop preview image',
-        },
-      ],
-      locale: 'en_US',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'Welcome to Monogram Shop Example',
-      description: 'Used Next.js, React, Bootstrap, React Spring and TypeScript',
-      images: ['https://images.pexels.com/photos/542552/pexels-photo-542552.jpeg'],
-    },
-  };
-};
 
 export default function ItemPage() {
   const params = useParams();
@@ -86,7 +56,7 @@ export default function ItemPage() {
             </Col>
             <Col lg={8} xs={12} className='d-flex flex-column justify-content-between gap-2'>
               <h1 className='m-0'>{item.name}</h1>
-              <p className='m-0'>{item.discription}</p>
+              <p className='m-0'>{item.description}</p>
               <Container className='px-0 d-flex flex-row align-items-center justify-content-between'>
                 <h2 className='m-0'>${item.cost}</h2>
                 <Badge bg='custom' className={`text-black fs-6 px-4 cs-badge rounded-0 text-uppercase ${item['pre-order'] !== true ? 'd-none' : '' }`}>Pre-order</Badge>

@@ -61,7 +61,7 @@ export default function MGItem ({ item, disOn }: MGItemProps) {
                 <Col xs={10}>
                     <Card.Subtitle className='fs-4 text-uppercase'>{item.name}</Card.Subtitle>
                     {disOn 
-                        ? <Card.Text className='text-secondary'>{item.discription}</Card.Text>
+                        ? <Card.Text className='text-secondary'>{item.description}</Card.Text>
                         : ''
                     }
                 </Col>

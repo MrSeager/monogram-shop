@@ -2,7 +2,7 @@ export interface ShopItem {
   id: number;
   img: string;
   name: string;
-  discription: string;
+  description: string;
   cost: number;
   'pre-order': boolean;
 }
