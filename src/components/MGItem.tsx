@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 //Components
 import { useHover, useFadeInHover } from './anim';
 import type { ShopItem } from '@/types/ShopItem';
@@ -39,9 +40,12 @@ export default function MGItem ({ item, disOn }: MGItemProps) {
         >
             <Badge bg='custom' className={`z-3 text-black fs-6 px-4 mt-3 cs-badge rounded-0 text-uppercase position-absolute ${item['pre-order'] !== true ? 'd-none' : '' }`}>Pre-order</Badge>
             
-            <animated.img 
+            <Image 
                 src={item.img} 
                 alt={item.name} 
+                layout="responsive"
+                width={900}
+                height={900}
                 className='rounded-0 card-img-top'    
             />
             <animated.img

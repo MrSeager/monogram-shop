@@ -7,8 +7,9 @@ import type { ShopItem } from '@/types/ShopItem';
 //Bootstrap
 import { Container, Row, Col, Badge, Button } from 'react-bootstrap';
 //Spring
-import { animated } from '@react-spring/web';
 import { useParams } from 'next/navigation';
+//Icons
+import { SlBasket } from "react-icons/sl";
 
 export default function ItemPage() {
   const params = useParams();
@@ -31,8 +32,10 @@ export default function ItemPage() {
   }, [id]);
 
   return (
-    <Container fluid className='min-vh-100 px-0'>
-      <MGSectionOne />
+    <Container fluid className='min-vh-100 user-select-none px-0'>
+      <MGSectionOne
+        imgClass={'cs-bg-image-2'}
+      />
       {item ? (
         <Container className='py-5 d-flex flex-column gap-3'>
           <Button 
@@ -51,13 +54,14 @@ export default function ItemPage() {
                 height={900}
               />
             </Col>
-            <Col lg={8} xs={12} className='d-flex flex-column justify-content-center gap-2'>
-              <h1>{item.name}</h1>
-              <p>{item.discription}</p>
+            <Col lg={8} xs={12} className='d-flex flex-column justify-content-between gap-2'>
+              <h1 className='m-0'>{item.name}</h1>
+              <p className='m-0'>{item.discription}</p>
               <Container className='px-0 d-flex flex-row align-items-center justify-content-between'>
                 <h2 className='m-0'>${item.cost}</h2>
-                <Badge bg='custom' className={`z-3 text-black fs-6 px-4 mt-3 cs-badge rounded-0 text-uppercase ${item['pre-order'] !== true ? 'd-none' : '' }`}>Pre-order</Badge>
+                <Badge bg='custom' className={`text-black fs-6 px-4 cs-badge rounded-0 text-uppercase ${item['pre-order'] !== true ? 'd-none' : '' }`}>Pre-order</Badge>
               </Container>
+              <Button className='cs-btn cs-tc-banner border-0 cs-transition text-uppercase rounded-pill fw-bold'><SlBasket size={20} className='me-2' /> Buy</Button>
             </Col>
           </Row>
         </Container>

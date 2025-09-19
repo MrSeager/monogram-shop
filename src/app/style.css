@@ -12,7 +12,13 @@ body {
 }
 
 .cs-bg-image {
-    background: url('https://images.pexels.com/photos/542552/pexels-photo-542552.jpeg') no-repeat center bottom / 100% auto;
+    background: url('https://images.pexels.com/photos/542552/pexels-photo-542552.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+.cs-bg-image-2 {
+    background: url('https://images.pexels.com/photos/2209315/pexels-photo-2209315.jpeg') no-repeat center center;
+    background-size: cover;
 }
 
 .cs-bg-image-banner {
@@ -64,6 +70,7 @@ body {
 .cs-btn:hover {
     background-color: #1a2456 !important;
     color: rgb(239, 194, 179) !important;
+    scale: 1.03;
 }
 
 /*Form*/
