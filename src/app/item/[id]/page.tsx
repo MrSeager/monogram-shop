@@ -1,36 +1,67 @@
-"use client";
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { Metadata } from 'next';
+import path from 'path';
+import fs from 'fs/promises';
 //Components
+import Image from 'next/image';
 import MGSectionOne from '@/components/MGSectionOne';
 import type { ShopItem } from '@/types/ShopItem';
 //Bootstrap
 import { Container, Row, Col, Badge, Button } from 'react-bootstrap';
-//Spring
-import { useParams } from 'next/navigation';
 //Icons
 import { SlBasket } from "react-icons/sl";
 
-export default function ItemPage() {
-  const params = useParams();
-  const id = params?.id;
+async function getItemById(id: string): Promise<ShopItem | undefined> {
+  const itemId = Number(id);
+  if (isNaN(itemId)) return undefined;
 
-  const [item, setItem] = useState<ShopItem | null>(null);
+  const filePath = path.join(process.cwd(), 'public', 'data.json');
+  const fileContents = await fs.readFile(filePath, 'utf-8');
+  const json = JSON.parse(fileContents);
+  const allItems: ShopItem[] = [...json.SectionTwoItems, ...json.SectionFourItems];
 
-  useEffect(() => {
-    async function fetchItem() {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const foundItem = [...data.SectionTwoItems, ...data.SectionFourItems].find(
-        (item: ShopItem) => item.id === Number(id)
-      );
+  return allItems.find(item => item.id === itemId);
+}
 
-      setItem(foundItem || null);
-    }
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const item = await getItemById(params.id);
 
-    fetchItem();
-  }, [id]);
+  if (!item) {
+    return {
+      title: 'Item Not Found – Monogram Shop',
+      description: 'This item does not exist in our training shop.',
+    };
+  }
 
+  return {
+    title: `${item.name} – Monogram Shop`,
+    description: item.description,
+    openGraph: {
+      title: `${item.name} – Monogram Shop`,
+      description: item.description,
+      url: `https://monogram-shop.vercel.app/item/${item.id}`,
+      siteName: 'Monogram Shop Training Exercise',
+      images: [
+        {
+          url: item.img,
+          width: 1200,
+          height: 630,
+          alt: item.name,
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${item.name} – Monogram Shop`,
+      description: item.description,
+      images: [item.img],
+    },
+  };
+}
+
+export default async function ItemPage({ params }: { params: { id: string } }) {
+  const item = await getItemById(params.id);
   return (
     <Container fluid className='min-vh-100 user-select-none px-0'>
       <MGSectionOne
